@@ -12,7 +12,10 @@ public  class Enlace {
   	        this.destino = destino;
   	        
   	    }
-  	 
+  	 /*
+  	  Getters y Setters para la clase Enlace.
+
+  	  */
   	    public CiudadNodo getOrigen() {
   	        return origen;
   	    }
@@ -29,10 +32,6 @@ public  class Enlace {
   	        this.destino = destino;
   	    }
   	 
-  	 
-  	
-  	    @Override
-  	    public String toString() {
-  	        return "\n Enlace [origin=" + origen.getCiudad() + ", destination=" + destino.getCiudad() ;
-  	    }
+
+  	   
   }
