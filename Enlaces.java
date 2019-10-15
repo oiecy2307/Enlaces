@@ -1,5 +1,11 @@
 package Enlaces;
-
+/*
+Maestría en ciencias de las computación
+Tecnologias de programación
+Agosto-Diciembre 2019
+Tutor@: Dra. Lucia Barron Estrada
+Alumno: Oscar Eliut Sandoval Alfaro 
+*/
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -18,7 +24,7 @@ public class Enlaces {
 	
 public Enlaces() throws FileNotFoundException, IOException {
 	
-	leerArchivoTxt("/Users/Oscar/Desktop/Enlaces.txt");
+	leerArchivoTxt("Enlaces.txt");
 }
 	
 public static void main(String [] args) throws IOException{
@@ -90,7 +96,7 @@ public static void revisarPatron(String cadena, Grafo g) {
 	
 		aux = m.group().replaceAll("(->|<-|-|\\.)", " ");
 		torres = aux.split(" ");
-		origen = new CiudadNodo(torres[1]);
+		origen = new CiudadNodo(torres[1]); 
 		destino = new CiudadNodo(torres[0]);
 		g.agregaNodo(origen);
 		g.agregaNodo(destino);
@@ -140,7 +146,7 @@ public static void revisarPatron(String cadena, Grafo g) {
 	}
 	
 	//Si la cadena no satisface a la expresion regular, el metodo termina, permitiendo una nueva ejecucion con la siguiente cadena.
-	System.out.println("Linea Invalida");
+	//System.out.println("Linea Invalida");
 	return;
 
 }

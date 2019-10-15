@@ -1,4 +1,11 @@
 package Enlaces;
+/*
+Maestría en ciencias de las computación
+Tecnologias de programación
+Agosto-Diciembre 2019
+Tutor@: Dra. Lucia Barron Estrada
+Alumno: Oscar Eliut Sandoval Alfaro 
+*/
 import java.util.ArrayList;
 
 import java.util.List;
@@ -52,10 +59,11 @@ public class Grafo {
         	
           val =   trazarCamino(source , source, destination, visit);
         
+        //quitar comparacion
         if(val==true) {
         	
         	for(int i =0; i<visit.size(); i++) {
-          	  aux = aux + visit.get(i).toString() + " => "  ;
+          	  aux = aux + " => " + visit.get(i).toString()   ;
           	
              }
         	
@@ -65,7 +73,7 @@ public class Grafo {
         }else{
         	
         	System.out.println("- " + source.getCiudad()  +  " => " + destination.getCiudad());
-            return false;
+             return false;
         }
           
         
@@ -117,6 +125,17 @@ public class Grafo {
     }
     
     
+    /*
+     El metodo trazarCamino comienza por instanciar un ArrayList de tipo Enlace que contendrá los nodos adyacentes o vecinos del 
+     objeto source que entra como parametro, se evalua si el objeto source de tipo CiudadNodo ya ha sido visitado, de ser asi el 
+     metodo retorna falso para terminar el programa, caso contrario agrega el nodo a la lista de visitados, despues de agregar el nodo
+     se evalua si el nombre de la ciudad es igual al nombre de la ciudad del nodo destino, de ser asi retorna un verdadero, caso contrario
+     se recorre la lista de adyacentes del objeto source, para ejecutar el metodo trazarCamino con un nuevo vecino, que en esta nueva ejecucion
+     representará al objeto source.
+     
+     Dado que ya no haya mas vecinos y no se encuentre un camino, se ira removiendo el ultimo visitado durante cada ejecucion.  
+     */
+    
     private boolean trazarCamino(CiudadNodo source, CiudadNodo origen, CiudadNodo destination, ArrayList<String> visited ) {
     	
     	ArrayList<Enlace> adyacentes = obtenNodo(source.getCiudad()).getAdjacents();
@@ -128,7 +147,7 @@ public class Grafo {
     	
         visited.add(source.getCiudad());
         
-        if (source == destination) {
+        if (source.getCiudad().compareToIgnoreCase(destination.getCiudad()) == 0) {
         	
             return true;
         }
@@ -140,6 +159,7 @@ public class Grafo {
             }
            
         }
+        
         visited.remove(visited.get(visited.size()-1));
         return false;
     }

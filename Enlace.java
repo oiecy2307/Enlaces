@@ -1,5 +1,11 @@
 package Enlaces;
-
+/*
+Maestría en ciencias de las computación
+Tecnologias de programación
+Agosto-Diciembre 2019
+Tutor@: Dra. Lucia Barron Estrada
+Alumno: Oscar Eliut Sandoval Alfaro 
+*/
 
 
 public  class Enlace {
